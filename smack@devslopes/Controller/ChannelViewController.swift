@@ -10,6 +10,8 @@ import UIKit
 
 class ChannelViewController: UIViewController {
 
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //setting the width of the revealed view controller minus the size of the menu button plus both left and right margin.
@@ -18,6 +20,11 @@ class ChannelViewController: UIViewController {
     }
     
 
-
+    @IBAction func logInButtonPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: TO_LOGIN, sender: nil)
+        
+    }
+    
 
 }
