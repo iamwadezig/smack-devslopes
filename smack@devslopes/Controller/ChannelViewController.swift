@@ -11,6 +11,8 @@ import UIKit
 class ChannelViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
+    //create somekind of access point when ctrl click ing in createaccountviewcontroller in top label to exit symbol
+    @IBAction func unwindFromCreateAccountViewController(unwindSegue: UIStoryboardSegue){}
     
     override func viewDidLoad() {
         super.viewDidLoad()
