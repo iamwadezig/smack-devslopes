@@ -13,8 +13,9 @@ class AuthService {
     
     static let instance = AuthService()
     // the most simple way to save data in your app
+    // use this for string or bool
     let defaults = UserDefaults.standard
-    
+    //so user doesnt have to always log in
     var isLoggedIn : Bool {
         get {
             return defaults.bool(forKey: LOGGED_IN_KEY)
@@ -41,13 +42,13 @@ class AuthService {
             defaults.set(newValue, forKey: USER_EMAIL)
         }
     }
-    
+    //web request using alamofire pod
     func registerUser(email: String, password: String, completion: @escaping CompletionHandler) {
         
         let lowerCaseEmail = email.lowercased()
-        
+        //create object name header that contain key and value required
         let header = [
-            "Content-Type" : "applicaiotn/json; charset=utf-8"
+            "Content-Type" : "application/json; charset=utf-8"
         ]
         
         let body: [String: Any] = [

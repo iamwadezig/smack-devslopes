@@ -215,7 +215,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IR-VW-SaA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IR-VW-SaA" customClass="RoundedButton" customModule="smack_devslopes" customModuleProvider="target">
                                 <rect key="frame" x="49.666666666666657" y="441" width="276" height="46"/>
                                 <color key="backgroundColor" red="0.41568627450000001" green="0.61960784310000006" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -226,6 +226,11 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="csa-uA-hIK">
                                 <rect key="frame" x="49.666666666666657" y="209" width="276" height="30"/>
@@ -460,8 +465,11 @@
                                     <constraint firstAttribute="width" constant="100" id="zKF-3d-9aZ"/>
                                 </constraints>
                                 <state key="normal" title="Choose Avatar"/>
+                                <connections>
+                                    <action selector="pickAvatarPressed:" destination="zFE-Fe-mv7" eventType="touchUpInside" id="8gB-0V-bTJ"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="db4-Pe-802">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="db4-Pe-802" customClass="RoundedButton" customModule="smack_devslopes" customModuleProvider="target">
                                 <rect key="frame" x="49" y="726" width="276" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.41568627450000001" green="0.61960784310000006" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -469,6 +477,11 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="createAccountPressed:" destination="zFE-Fe-mv7" eventType="touchUpInside" id="L84-Gb-bVU"/>
                                 </connections>
@@ -480,6 +493,9 @@
                                     <constraint firstAttribute="height" constant="30" id="Vb1-Pa-87N"/>
                                 </constraints>
                                 <state key="normal" title="Generate Background Color"/>
+                                <connections>
+                                    <action selector="pickBGColorPressed:" destination="zFE-Fe-mv7" eventType="touchUpInside" id="1pK-ja-EqP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -502,6 +518,10 @@
                         <viewLayoutGuide key="safeArea" id="vpw-ot-zmu"/>
                     </view>
                     <connections>
+                        <outlet property="emailTxt" destination="TCn-ub-bYH" id="UT0-wZ-oT4"/>
+                        <outlet property="passTxt" destination="oeM-J6-ajG" id="89i-OT-Zap"/>
+                        <outlet property="userImg" destination="LjM-nc-5lj" id="6LA-q3-zky"/>
+                        <outlet property="userNameTxt" destination="H0a-Jr-M4J" id="eYv-b7-aHD"/>
                         <segue destination="K5C-fh-KKY" kind="unwind" identifier="unwindToChannel" unwindAction="unwindFromCreateAccountViewControllerWithUnwindSegue:" id="aeX-qm-nUt"/>
                     </connections>
                 </viewController>

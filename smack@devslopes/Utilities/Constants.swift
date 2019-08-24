@@ -11,7 +11,7 @@ import Foundation
 typealias CompletionHandler = (_ Success: Bool) -> ()
 
 //URL Constant
-let BASE_URL = "https://smackchatie.herokuapp.com/v1/"
+let BASE_URL = "https://smackchitie.herokuapp.com/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
 //Segues
 let TO_LOGIN = "loginSegue"
