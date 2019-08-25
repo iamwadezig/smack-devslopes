@@ -24,8 +24,21 @@ class CreateAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
    }
    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if UserDataService.instance.avatarName != "" {
+            userImg.image = UIImage(named: UserDataService.instance.avatarName)
+            avatarName = UserDataService.instance.avatarName
+        }
+    }
+    
+    
+    
+    
     @IBAction func closePressed(_ sender: Any) {
         //if you use dismiss it will return to previous vc, thats not what we want, we want it to go all the way back to initialvc. use the unwind. set it up first on ChannelViewController because we want to go there when dismiss
         performSegue(withIdentifier: TO_CHANNEL, sender: nil)
