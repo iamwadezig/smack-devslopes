@@ -26,9 +26,15 @@ class ChannelViewController: UIViewController {
     
 
     @IBAction func logInButtonPressed(_ sender: Any) {
-        
-        performSegue(withIdentifier: TO_LOGIN, sender: nil)
-        
+        //check if we already have already logged in
+        if AuthService.instance.isLoggedIn {
+            //show profile xib
+            let profile = ProfileViewController()
+            profile.modalPresentationStyle = .custom
+            present(profile, animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: TO_LOGIN, sender: nil)
+        }
     }
     
     @objc func userDataDidChange(_ notif: Notification) {

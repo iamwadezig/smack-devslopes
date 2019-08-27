@@ -12,6 +12,8 @@
 		053C0CCD23118B9400E03408 /* AvatarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C0CCC23118B9400E03408 /* AvatarPickerViewController.swift */; };
 		053C0CCF231288D400E03408 /* AvatarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C0CCE231288D400E03408 /* AvatarCollectionViewCell.swift */; };
 		053C0CD12312B57000E03408 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C0CD02312B57000E03408 /* CircleImage.swift */; };
+		053C0CD42315416100E03408 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C0CD22315416100E03408 /* ProfileViewController.swift */; };
+		053C0CD52315416100E03408 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 053C0CD32315416100E03408 /* ProfileViewController.xib */; };
 		05460398230C1F4300255F65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05460397230C1F4300255F65 /* AppDelegate.swift */; };
 		0546039D230C1F4300255F65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0546039B230C1F4300255F65 /* Main.storyboard */; };
 		0546039F230C1F4300255F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0546039E230C1F4300255F65 /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 		053C0CCC23118B9400E03408 /* AvatarPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerViewController.swift; sourceTree = "<group>"; };
 		053C0CCE231288D400E03408 /* AvatarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCollectionViewCell.swift; sourceTree = "<group>"; };
 		053C0CD02312B57000E03408 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		053C0CD22315416100E03408 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		053C0CD32315416100E03408 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		05460394230C1F4300255F65 /* smack@devslopes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "smack@devslopes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05460397230C1F4300255F65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0546039C230C1F4300255F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		053C0CD62315419800E03408 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				053C0CD32315416100E03408 /* ProfileViewController.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
 		0546038B230C1F4300255F65 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +99,7 @@
 		05460396230C1F4300255F65 /* smack@devslopes */ = {
 			isa = PBXGroup;
 			children = (
+				053C0CD62315419800E03408 /* Xibs */,
 				054603BE230FCDE200255F65 /* Services */,
 				054603B7230D39A900255F65 /* Utilities */,
 				054603A9230C2BC900255F65 /* Supporting FIles */,
@@ -120,6 +133,7 @@
 				054603BA230D6C5500255F65 /* LoginViewController.swift */,
 				054603BC230E856D00255F65 /* CreateAccountViewController.swift */,
 				053C0CCC23118B9400E03408 /* AvatarPickerViewController.swift */,
+				053C0CD22315416100E03408 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -239,6 +253,7 @@
 			files = (
 				054603A2230C1F4300255F65 /* LaunchScreen.storyboard in Resources */,
 				0546039F230C1F4300255F65 /* Assets.xcassets in Resources */,
+				053C0CD52315416100E03408 /* ProfileViewController.xib in Resources */,
 				0546039D230C1F4300255F65 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +319,7 @@
 				054603B6230D101C00255F65 /* GradientView.swift in Sources */,
 				054603BD230E856D00255F65 /* CreateAccountViewController.swift in Sources */,
 				054603B4230CEB8000255F65 /* ChannelViewController.swift in Sources */,
+				053C0CD42315416100E03408 /* ProfileViewController.swift in Sources */,
 				054603AD230C2BFF00255F65 /* SWRevealViewController.m in Sources */,
 				054603B9230D39BE00255F65 /* Constants.swift in Sources */,
 			);
