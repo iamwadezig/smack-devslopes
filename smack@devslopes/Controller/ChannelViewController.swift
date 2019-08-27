@@ -10,7 +10,9 @@ import UIKit
 
 class ChannelViewController: UIViewController {
 
+    //Outlets
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var avatarImage: CircleImage!
     //create somekind of access point when ctrl click ing in createaccountviewcontroller in top label to exit symbol
     @IBAction func unwindFromCreateAccountViewController(unwindSegue: UIStoryboardSegue){}
     
@@ -18,6 +20,7 @@ class ChannelViewController: UIViewController {
         super.viewDidLoad()
         //setting the width of the revealed view controller minus the size of the menu button plus both left and right margin.
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 82
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelViewController.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
 
     }
     
@@ -28,5 +31,16 @@ class ChannelViewController: UIViewController {
         
     }
     
+    @objc func userDataDidChange(_ notif: Notification) {
+        if AuthService.instance.isLoggedIn {
+            loginButton.setTitle(UserDataService.instance.name, for: .normal)
+            avatarImage.image = UIImage(named: UserDataService.instance.avatarName)
+            avatarImage.backgroundColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
+        } else {
+            loginButton.setTitle("Login", for: .normal)
+            avatarImage.image = UIImage(named: "menuProfileIcon")
+            avatarImage.backgroundColor = UIColor.clear
+        }
+    }
 
 }

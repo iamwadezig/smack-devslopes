@@ -199,6 +199,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="avatarImage" destination="EKD-8f-uLl" id="cw5-ir-Ez9"/>
                         <outlet property="loginButton" destination="xuS-5q-aTt" id="SI9-OW-HBi"/>
                         <segue destination="u05-3E-EuG" kind="show" identifier="loginSegue" id="jce-9x-C3z"/>
                     </connections>
