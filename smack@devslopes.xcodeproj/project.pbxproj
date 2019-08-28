@@ -14,6 +14,8 @@
 		053C0CD12312B57000E03408 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C0CD02312B57000E03408 /* CircleImage.swift */; };
 		053C0CD42315416100E03408 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C0CD22315416100E03408 /* ProfileViewController.swift */; };
 		053C0CD52315416100E03408 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 053C0CD32315416100E03408 /* ProfileViewController.xib */; };
+		053C0CD823166BD800E03408 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C0CD723166BD800E03408 /* MessageService.swift */; };
+		053C0CDA23166C1E00E03408 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C0CD923166C1E00E03408 /* Channel.swift */; };
 		05460398230C1F4300255F65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05460397230C1F4300255F65 /* AppDelegate.swift */; };
 		0546039D230C1F4300255F65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0546039B230C1F4300255F65 /* Main.storyboard */; };
 		0546039F230C1F4300255F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0546039E230C1F4300255F65 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		053C0CD02312B57000E03408 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		053C0CD22315416100E03408 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		053C0CD32315416100E03408 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		053C0CD723166BD800E03408 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		053C0CD923166C1E00E03408 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		05460394230C1F4300255F65 /* smack@devslopes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "smack@devslopes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05460397230C1F4300255F65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0546039C230C1F4300255F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 		054603B0230CEB4800255F65 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				053C0CD923166C1E00E03408 /* Channel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 			children = (
 				054603BF230FCDF700255F65 /* AuthService.swift */,
 				053C0CCA2311787B00E03408 /* UserDataService.swift */,
+				053C0CD723166BD800E03408 /* MessageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -311,7 +317,9 @@
 				053C0CC92311671600E03408 /* RoundedButton.swift in Sources */,
 				05460398230C1F4300255F65 /* AppDelegate.swift in Sources */,
 				053C0CD12312B57000E03408 /* CircleImage.swift in Sources */,
+				053C0CDA23166C1E00E03408 /* Channel.swift in Sources */,
 				053C0CCB2311787B00E03408 /* UserDataService.swift in Sources */,
+				053C0CD823166BD800E03408 /* MessageService.swift in Sources */,
 				053C0CCF231288D400E03408 /* AvatarCollectionViewCell.swift in Sources */,
 				054603B2230CEB7100255F65 /* ChatViewController.swift in Sources */,
 				054603C0230FCDF700255F65 /* AuthService.swift in Sources */,
