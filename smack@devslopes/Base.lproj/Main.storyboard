@@ -232,6 +232,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="u05-3E-EuG" eventType="touchUpInside" id="civ-56-JGM"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="csa-uA-hIK">
                                 <rect key="frame" x="49.666666666666657" y="209" width="276" height="30"/>
@@ -337,6 +340,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Lyq-9V-oar">
+                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.2901960784" green="0.30196078430000001" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -354,14 +361,21 @@
                             <constraint firstItem="ApI-7v-HHO" firstAttribute="top" secondItem="TaS-e6-qER" secondAttribute="top" id="Ule-0e-smU"/>
                             <constraint firstItem="Vmf-Qm-0wZ" firstAttribute="width" secondItem="csa-uA-hIK" secondAttribute="width" id="ZSV-Pn-4zS"/>
                             <constraint firstItem="rfE-Mh-T76" firstAttribute="width" secondItem="LoJ-PE-Dpa" secondAttribute="width" id="b5B-2F-fFu"/>
+                            <constraint firstItem="Lyq-9V-oar" firstAttribute="centerY" secondItem="Sn1-KH-cfp" secondAttribute="centerY" id="dRx-4q-b1a"/>
                             <constraint firstItem="Vmf-Qm-0wZ" firstAttribute="centerX" secondItem="csa-uA-hIK" secondAttribute="centerX" id="fOb-WW-eQL"/>
                             <constraint firstItem="nys-85-UZs" firstAttribute="centerX" secondItem="Sn1-KH-cfp" secondAttribute="centerX" id="hnm-1U-d08"/>
                             <constraint firstItem="rfE-Mh-T76" firstAttribute="top" secondItem="LoJ-PE-Dpa" secondAttribute="bottom" constant="10" id="kOI-CW-ntM"/>
                             <constraint firstItem="nys-85-UZs" firstAttribute="top" secondItem="TaS-e6-qER" secondAttribute="top" constant="51" id="tdB-g8-PYJ"/>
+                            <constraint firstItem="Lyq-9V-oar" firstAttribute="centerX" secondItem="Sn1-KH-cfp" secondAttribute="centerX" id="u0J-BS-xFv"/>
                             <constraint firstItem="5IR-VW-SaA" firstAttribute="centerX" secondItem="Sn1-KH-cfp" secondAttribute="centerX" id="xI7-Br-cnJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TaS-e6-qER"/>
                     </view>
+                    <connections>
+                        <outlet property="passText" destination="LoJ-PE-Dpa" id="9VN-EP-CSr"/>
+                        <outlet property="spinner" destination="Lyq-9V-oar" id="Cba-hv-hky"/>
+                        <outlet property="userNameText" destination="csa-uA-hIK" id="FAp-Lv-afu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vVS-wj-fyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

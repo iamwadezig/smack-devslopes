@@ -24,6 +24,12 @@ class ChannelViewController: UIViewController {
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        setupUserInfo()
+        
+    }
+    
 
     @IBAction func logInButtonPressed(_ sender: Any) {
         //check if we already have already logged in
@@ -38,6 +44,13 @@ class ChannelViewController: UIViewController {
     }
     
     @objc func userDataDidChange(_ notif: Notification) {
+        
+        setupUserInfo()
+        
+    }
+    
+    func setupUserInfo() {
+        
         if AuthService.instance.isLoggedIn {
             loginButton.setTitle(UserDataService.instance.name, for: .normal)
             avatarImage.image = UIImage(named: UserDataService.instance.avatarName)
@@ -49,4 +62,5 @@ class ChannelViewController: UIViewController {
         }
     }
 
+    
 }
