@@ -13,11 +13,15 @@ class ChannelViewController: UIViewController {
     //Outlets
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var avatarImage: CircleImage!
+    @IBOutlet weak var tableView: UITableView!
     //create somekind of access point when ctrl click ing in createaccountviewcontroller in top label to exit symbol
     @IBAction func unwindFromCreateAccountViewController(unwindSegue: UIStoryboardSegue){}
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         //setting the width of the revealed view controller minus the size of the menu button plus both left and right margin.
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 82
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelViewController.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
@@ -61,6 +65,44 @@ class ChannelViewController: UIViewController {
             avatarImage.backgroundColor = UIColor.clear
         }
     }
+    
+    @IBAction func addChannelButton(_ sender: Any) {
+        
+        if AuthService.instance.isLoggedIn {
+            let addChannel = CreateChannelViewController()
+            addChannel.modalPresentationStyle = .custom
+            present(addChannel, animated: true, completion: nil)
+        }
+        
+    }
+    
+    
+}
 
+extension ChannelViewController : UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+}
+
+extension ChannelViewController : UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.channels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "channelCell", for: indexPath) as? ChannelCell {
+            let channel = MessageService.instance.channels[indexPath.row]
+            cell.configureCell(channel: channel)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+        
+    }
+    
     
 }

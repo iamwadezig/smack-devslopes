@@ -22,10 +22,16 @@ class ChatViewController: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
 
         //check if we already login
+        
         if AuthService.instance.isLoggedIn {
             AuthService.instance.findUserByEmail { (success) in
                 NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
             }
+        }
+        
+        //load available channel
+        MessageService.instance.findAllChannel { (success) in
+            
         }
     }
     

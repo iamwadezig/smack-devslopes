@@ -135,7 +135,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="80" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Y0c-HO-vYy">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" id="Y0c-HO-vYy" customClass="ChannelCell" customModule="smack_devslopes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y0c-HO-vYy" id="DK5-BU-Dyi">
@@ -155,6 +155,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="channelLabel" destination="3oO-vW-X3f" id="elx-Ud-s4I"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -167,6 +170,9 @@
                                 <state key="normal" image="addChannelButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addChannelButton:" destination="7pr-rO-ZhB" eventType="touchUpInside" id="yZS-Pn-4zw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -201,6 +207,7 @@
                     <connections>
                         <outlet property="avatarImage" destination="EKD-8f-uLl" id="cw5-ir-Ez9"/>
                         <outlet property="loginButton" destination="xuS-5q-aTt" id="SI9-OW-HBi"/>
+                        <outlet property="tableView" destination="OE2-xD-ukI" id="kwq-cA-kGs"/>
                         <segue destination="u05-3E-EuG" kind="show" identifier="loginSegue" id="jce-9x-C3z"/>
                     </connections>
                 </viewController>
