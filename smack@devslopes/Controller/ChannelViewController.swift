@@ -25,6 +25,12 @@ class ChannelViewController: UIViewController {
         //setting the width of the revealed view controller minus the size of the menu button plus both left and right margin.
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 82
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelViewController.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+        
+        SocketService.instance.getChannel { (success) in
+            if success {
+                self.tableView.reloadData()
+            }
+        }
 
     }
     
