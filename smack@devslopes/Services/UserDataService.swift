@@ -88,5 +88,6 @@ static let instance = UserDataService()
         AuthService.instance.isLoggedIn = false
         AuthService.instance.userEmail = ""
         AuthService.instance.authToken = ""
+        MessageService.instance.clearAllChannel()
     }
 }

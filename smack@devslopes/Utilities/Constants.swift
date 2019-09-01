@@ -33,7 +33,9 @@ let USER_EMAIL = "userEmail"
 let smackPurplePlaceHolder = #colorLiteral(red: 0.3631127477, green: 0.4045833051, blue: 0.8775706887, alpha: 0.5)
 
 // Notification Constant
-let NOTIF_USER_DATA_DID_CHANGE = Notification.Name(rawValue: "notifUserDataChanged")
+let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
+let NOTIF_CHANNELS_LOADED = Notification.Name("channelsLoaded")
+let NOTIF_CHANNEL_SELECTED = Notification.Name("channelSelected")
 
 //Header
 //create object name header that contain key and value required

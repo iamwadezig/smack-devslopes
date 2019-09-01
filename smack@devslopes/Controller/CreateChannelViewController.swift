@@ -13,7 +13,6 @@ class CreateChannelViewController: UIViewController {
     //Outlets
     @IBOutlet weak var userText: UITextField!
     @IBOutlet weak var descText: UITextField!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var bgView: UIView!
     
     override func viewDidLoad() {
@@ -41,7 +40,6 @@ class CreateChannelViewController: UIViewController {
     }
     
     func setupView() {
-        spinner.isHidden = true
         
         
         let closeTouch = UITapGestureRecognizer(target: self, action: #selector(CreateChannelViewController.closeTap(_:)))
