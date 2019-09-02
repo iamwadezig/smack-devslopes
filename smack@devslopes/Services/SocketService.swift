@@ -50,6 +50,29 @@ class SocketService : NSObject {
             
         }
     }
+    //func to add message to API
+    func addMessage(messageBody: String, userId: String, channelId: String, completion: @escaping CompletionHandler) {
+        let user = UserDataService.instance
+        //emit the new message
+        socket.emit("newMessage", messageBody, userId, channelId, user.name, user.avatarName, user.avatarColor)
+        completion(true)
+    }
+    
+//    func getMessage(completion: @escaping CompletionHandler) {
+//        //listening when new message created
+//        socket.on("messageCreated") { (dataArray, ack) in
+//            //parsed out information and append to message service array
+//            guard let message = dataArray[0] as? String else {return}
+//            guard let userId = dataArray[1] as? String else {return}
+//            guard let channelId = dataArray[2] as? String else {return}
+//            guard let userName = dataArray[3] as? String else {return}
+//            guard let userAvatar = dataArray[4] as? String else {return}
+//            guard let userAvatarColor = dataArray[5] as? String else {return}
+//            //create new object called newmessage
+//            let newMessage = Message(message: message, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: userId, timeStamp: <#T##String?#>)
+//        }
+//    }
+    
 }
 
     

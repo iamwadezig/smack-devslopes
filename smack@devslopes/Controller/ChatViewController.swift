@@ -12,10 +12,16 @@ class ChatViewController: UIViewController {
     //Outlets
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var channelNameLabel: UILabel!
+    @IBOutlet weak var messageTextBox: UITextField!
     
     //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        //bind the view to keyboard
+        view.bindToKeyboard()
+        //dismiss keyboard when tapping outside keyboard
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ChatViewController.handleTap))
+        self.view.addGestureRecognizer(tap)
         //menu button on top left corner will reveal the channel view controller
         menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         //customize with and drag swreveal
@@ -59,11 +65,38 @@ class ChatViewController: UIViewController {
         
     }
     
+    //use to dismiss keyboard
+    @objc func handleTap() {
+        
+        view.endEditing(true)
+        
+    }
+    
     func updateWithChannel() {
         //we have to unwrap selected channel because it can contain nil(when its not selected) if there is value then fill the string else use empty string (coalescing nil)
         let channelName = MessageService.instance.selectedChannel?.channelTitle ?? ""
         channelNameLabel.text = "#\(channelName)"
         getMessages()
+    }
+    
+    @IBAction func sendMessagePressed(_ sender: Any) {
+        
+        if AuthService.instance.isLoggedIn {
+            //get channel id and textfield
+            guard let channelId = MessageService.instance.selectedChannel?.id else {return}
+            guard let message = messageTextBox.text else {return}
+            
+            //called socket
+            SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.id, channelId: channelId) { (success) in
+                if success {
+                    //message text will reset to blank string
+                    self.messageTextBox.text = ""
+                    //and dismiss keyboard
+                    self.messageTextBox.resignFirstResponder()
+                }
+            }
+        }
+        
     }
     
     func onLoginGetMessages() {

@@ -83,12 +83,13 @@ class MessageService {
                             let timeStamp = item["timeStamp"].stringValue
                             
                             let newMessages = Message(message: messageBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
+                            
                             self.messages.append(newMessages)
                         }
                         
                         //NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
                         //print(MessageService.instance.channels.count)
-                        
+                        print(self.messages)
                         completion(true)
                     }
                 } catch {

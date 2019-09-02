@@ -30,6 +30,7 @@
 		054603BD230E856D00255F65 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054603BC230E856D00255F65 /* CreateAccountViewController.swift */; };
 		054603C0230FCDF700255F65 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054603BF230FCDF700255F65 /* AuthService.swift */; };
 		055BB4A3231CDC08009141EC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BB4A2231CDC08009141EC /* Message.swift */; };
+		055BB4A5231CFC16009141EC /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BB4A4231CFC16009141EC /* KeyboardBoundView.swift */; };
 		05DC410D2317BC9500E3B378 /* CreateChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC410B2317BC9500E3B378 /* CreateChannelViewController.swift */; };
 		05DC410E2317BC9500E3B378 /* CreateChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05DC410C2317BC9500E3B378 /* CreateChannelViewController.xib */; };
 		05DC41102318197200E3B378 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC410F2318197200E3B378 /* SocketService.swift */; };
@@ -64,6 +65,7 @@
 		054603BC230E856D00255F65 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		054603BF230FCDF700255F65 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		055BB4A2231CDC08009141EC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		055BB4A4231CFC16009141EC /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		05DC410B2317BC9500E3B378 /* CreateChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChannelViewController.swift; sourceTree = "<group>"; };
 		05DC410C2317BC9500E3B378 /* CreateChannelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateChannelViewController.xib; sourceTree = "<group>"; };
 		05DC410F2318197200E3B378 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				053C0CCE231288D400E03408 /* AvatarCollectionViewCell.swift */,
 				053C0CD02312B57000E03408 /* CircleImage.swift */,
 				053C0CDB2316CCEE00E03408 /* ChannelCell.swift */,
+				055BB4A4231CFC16009141EC /* KeyboardBoundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055BB4A5231CFC16009141EC /* KeyboardBoundView.swift in Sources */,
 				05DC41102318197200E3B378 /* SocketService.swift in Sources */,
 				05DC410D2317BC9500E3B378 /* CreateChannelViewController.swift in Sources */,
 				054603BB230D6C5500255F65 /* LoginViewController.swift in Sources */,
