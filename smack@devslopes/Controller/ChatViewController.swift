@@ -63,15 +63,30 @@ class ChatViewController: UIViewController {
         //we have to unwrap selected channel because it can contain nil(when its not selected) if there is value then fill the string else use empty string (coalescing nil)
         let channelName = MessageService.instance.selectedChannel?.channelTitle ?? ""
         channelNameLabel.text = "#\(channelName)"
+        getMessages()
     }
     
     func onLoginGetMessages() {
         MessageService.instance.findAllChannel { (success) in
             if success {
                 //do stuff with channel
+                if MessageService.instance.channels.count > 0 {
+                    MessageService.instance.selectedChannel = MessageService.instance.channels[0]
+                    self.updateWithChannel()
+                } else {
+                    self.channelNameLabel.text = "No Channels Yet!"
+                }
             }
         }
     }
     
+    func getMessages() {
+        
+        guard let channelId = MessageService.instance.selectedChannel?.id else {return}
+        MessageService.instance.findAllMessagesForChannel(channelId: channelId) { (success) in
+            
+        }
+        
+    }
 
 }
