@@ -89,5 +89,6 @@ static let instance = UserDataService()
         AuthService.instance.userEmail = ""
         AuthService.instance.authToken = ""
         MessageService.instance.clearAllChannel()
+        MessageService.instance.clearMessages()
     }
 }
