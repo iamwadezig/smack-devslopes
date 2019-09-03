@@ -31,6 +31,13 @@ class ChannelViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+        //listening to unselected channel
+        SocketService.instance.getChatMessage { (newMessage) in
+            if newMessage.channelId != MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
+                MessageService.instance.unreadChannels.append(newMessage.channelId)
+                self.tableView.reloadData()
+            }
+        }
 
     }
     
@@ -121,6 +128,19 @@ extension ChannelViewController : UITableViewDataSource {
         //when we select a row (item) we are going to save the selected channel to message service variable selected channel, then going to notify the chat viewcontroller that we have selected channel, then we are going to close the menu (have the chatviewcontroller back slide over)
         let channel = MessageService.instance.channels[indexPath.row]
         MessageService.instance.selectedChannel = channel
+        
+        //unread channel has been clicked. check if there is unread channel
+        if MessageService.instance.unreadChannels.count > 0 {
+            //if theres is then filter out of the unread channel. unread channel equal to itself then filter it out the item where equal to this channel id
+            MessageService.instance.unreadChannels = MessageService.instance.unreadChannels.filter{$0 != channel.id}
+        }
+        //reload that row selected and then select that row afterward
+        let index = IndexPath(row: indexPath.row, section: 0)
+        tableView.reloadRows(at: [index], with: .none)
+        tableView.selectRow(at: index, animated: false, scrollPosition: .none)
+        
+        
+        
         NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
         
         self.revealViewController()?.revealToggle(animated: true)

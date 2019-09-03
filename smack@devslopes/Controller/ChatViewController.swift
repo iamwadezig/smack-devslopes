@@ -52,16 +52,29 @@ class ChatViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(ChatViewController.channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
         //reload tableview when socket grab new message
-        SocketService.instance.getChatMessage { (success) in
-            if success {
+        SocketService.instance.getChatMessage { (newMessage) in
+            if newMessage.channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
+                MessageService.instance.messages.append(newMessage)
                 self.messageTableView.reloadData()
-                //jump straight to the latest message
+                //jump straight to latest message
                 if MessageService.instance.messages.count > 0 {
                     let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
                     self.messageTableView.scrollToRow(at: endIndex, at: .bottom, animated: false)
+                    
                 }
             }
         }
+        //reload tableview when socket grab new message
+//        SocketService.instance.getChatMessage { (success) in
+//            if success {
+//                self.messageTableView.reloadData()
+//                //jump straight to the latest message
+//                if MessageService.instance.messages.count > 0 {
+//                    let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+//                    self.messageTableView.scrollToRow(at: endIndex, at: .bottom, animated: false)
+//                }
+//            }
+//        }
         //typing user
         SocketService.instance.getTypingUser { (typingUsers) in
             guard let channelId = MessageService.instance.selectedChannel?.id else {return}
@@ -159,7 +172,7 @@ class ChatViewController: UIViewController {
             //get channel id and textfield
             guard let channelId = MessageService.instance.selectedChannel?.id else {return}
             guard let message = messageTextBox.text else {return}
-            
+
             //called socket
             SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.id, channelId: channelId) { (success) in
                 if success {
